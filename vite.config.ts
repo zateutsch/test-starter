@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       // you can remove base and scope pwa plugin will use the base on vite: defaults to /
-      base: "/",
+      base: "/test-starter/",
       scope: "/",
       registerType: "autoUpdate",
       injectRegister: false,

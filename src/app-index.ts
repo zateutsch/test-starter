@@ -4,6 +4,7 @@ import { Router } from '@vaadin/router';
 import { registerSW } from 'virtual:pwa-register';
 
 import './script/pages/app-home';
+import './script/pages/app-about';
 import './script/components/header';
 import './styles/global.css';
 
@@ -69,15 +70,26 @@ export class AppIndex extends LitElement {
           { path: '/', component: 'app-home' },
           {
             path: '/about',
-            component: 'app-about',
-            action: async () => {
-              await import('./script/pages/app-about.js');
-            },
+            component: 'app-about'
           },
         ],
       } as any,
     ]);
     registerSW({ immediate: true });
+
+    window.addEventListener(`vaadin-router-location-changed`, (event) => {
+      document.title = this.mapPathToTitle(event.detail.location.pathname);
+    });
+
+  }
+
+  mapPathToTitle(pathname: string): string {
+    const pathToTitleMap: any = {
+      "/about": "About",
+      "/": "Home"
+    };
+
+    return pathToTitleMap[pathname];
   }
 
   render() {

@@ -16,7 +16,7 @@ export default defineConfig({
       injectRegister: false,
       manifest: false,
       workbox: {
-        globDirectory: 'dist',
+        globDirectory: 'dist', // caching our PWA Starter assets
         globPatterns: [
           '**/*.{html,js,css,png,webp,jpg}'
         ],

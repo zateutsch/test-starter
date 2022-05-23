@@ -412,11 +412,11 @@ found at http://polymer.github.io/PATENTS.txt
           opacity: 1;
         }
       }
-    `}constructor(){super()}firstUpdated(){var e;new U((e=this.shadowRoot)==null?void 0:e.querySelector("#routerOutlet")).setRoutes([{path:"",animate:!0,children:[{path:"/",component:"app-home"},{path:"/about",component:"app-about"}]}]),Ti({immediate:!0}),window.addEventListener("vaadin-router-location-changed",t=>{document.title=this.mapPathToTitle(t.detail.location.pathname)})}mapPathToTitle(n){return{"/about":"About","/":"Home"}[n]}render(){return W`
+    `}constructor(){super()}firstUpdated(){var e;new U((e=this.shadowRoot)==null?void 0:e.querySelector("#routerOutlet")).setRoutes([{path:"",animate:!0,children:[{path:"/test-starter/",component:"app-home"},{path:"test-starter/about",component:"app-about"}]}]),Ti({immediate:!0}),window.addEventListener("vaadin-router-location-changed",t=>{document.title=this.mapPathToTitle(t.detail.location.pathname)})}mapPathToTitle(n){return{"/about":"About","/":"Home"}[n]}render(){return W`
       <div>
         <main>
           <div id="routerOutlet"></div>
         </main>
       </div>
     `}};Lt=er([_e("app-index")],Lt);
-//# sourceMappingURL=index.96b79e81.js.map
+//# sourceMappingURL=index.6d5ffec2.js.map

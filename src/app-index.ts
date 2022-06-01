@@ -64,7 +64,7 @@ export class AppIndex extends LitElement {
     router.setRoutes([
       // temporarily cast to any because of a Type bug with the router
       {
-        path: '',
+        path: 'test-starter',
         animate: true,
         children: [
           { path: '/', component: 'app-home' },
@@ -77,19 +77,6 @@ export class AppIndex extends LitElement {
     ]);
     registerSW({ immediate: true });
 
-    window.addEventListener(`vaadin-router-location-changed`, (event) => {
-      document.title = this.mapPathToTitle(event.detail.location.pathname);
-    });
-
-  }
-
-  mapPathToTitle(pathname: string): string {
-    const pathToTitleMap: any = {
-      "/about": "About",
-      "/": "Home"
-    };
-
-    return pathToTitleMap[pathname];
   }
 
   render() {

@@ -7,7 +7,6 @@
     "dev": "vite --open",
     "dev-task": "vite",
     "build": "tsc && vite build",
-    "pages-build": "tsc && vite build --base=${{ github.repository.name }}",
     "start": "npm run build && vite preview",
     "start-remote": "vite --host"
   },

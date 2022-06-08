@@ -14,13 +14,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: '16'
+          node-version: '16.13'
           
       - name: Install Dependencies
         run: npm install
         
       - name: TSC and Vite Build
-        run: npm run pages-build
+        run: tsc && vite build
         
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.7.3

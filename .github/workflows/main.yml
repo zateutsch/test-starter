@@ -1,0 +1,28 @@
+name: Deploy to GitHub Pages
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+          
+      - name: Install Dependencies
+        run: npm install
+        
+      - name: TSC and Vite Build
+        run: tsc && vite build --base=${{ github.event.repository.name }}
+        
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.7.3
+        with:
+          publish_dir: ./dist

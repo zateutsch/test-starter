@@ -20,7 +20,7 @@ jobs:
         run: npm install
         
       - name: TSC and Vite Build
-        run: npm run build -- --base="${{ github.repository.name }}"
+        run: npm run build -- --base=${{ github.event.repository.name }}
         
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.7.3
